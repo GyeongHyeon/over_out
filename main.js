@@ -6,7 +6,7 @@
   const listContainer = document.querySelector('.list_container');
   const announcer = document.querySelector('#announcer');
   const turnMainBtn = document.querySelector('.turn_main');
-  const Bgms = [new Audio('bgm/confirm.mp3'), new Audio('bgm/select.mp3')];
+  const Bgms = [new Audio('bgm/Confirm.mp3'), new Audio('bgm/select.mp3')];
   
 
 
