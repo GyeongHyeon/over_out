@@ -6,8 +6,7 @@
   const listContainer = document.querySelector('.list_container');
   const announcer = document.querySelector('#announcer');
   const turnMainBtn = document.querySelector('.turn_main');
-  const Bgms = [new Audio('bgm/Confirm.mp3'), new Audio('bgm/select.mp3')];
-  
+  const Bgms = [new Audio('bgm/Confirm.mp3'), new Audio('bgm/select.mp3'), new Audio('bgm/background.mp3')];
 
 
   const select = (index, sendFocus = true) => { // 항목을 선택하는 함수
@@ -144,5 +143,10 @@
     }, 1000);
   }
 
+  document.addEventListener('keydown', (event) => {
+    if(event.key === 'Tab'){
+      Bgms[2].play();
+  };
+})
 
 })();
