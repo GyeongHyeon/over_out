@@ -69,6 +69,7 @@
   const h1Elements = document.querySelectorAll('body h1');
   
   if (windowWidth <= 500) {
+    Bgms[2].play();
     pElements.forEach((p) => {
       p.setAttribute('tabindex', '0');
     });
@@ -76,6 +77,7 @@
       h1.setAttribute('tabindex', '0');
     });
   } else {
+    Bgms[2].pause();
     pElements.forEach((p) => {
       p.removeAttribute('tabindex');
     });
