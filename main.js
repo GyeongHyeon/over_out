@@ -54,6 +54,7 @@
         case 'Enter':
         case ' ': 
           Bgms[0].play();
+          Bgms[0].currentTime = 0;
           mainContents[index].classList.toggle('show_content');
           turnMainBtn.classList.add('show_btn');
           listContainer.classList.toggle('list_container_hid');
@@ -102,6 +103,7 @@
 
   function toggleShowTable(index) {
     Bgms[0].play();
+    Bgms[0].currentTime = 0;
     if (!tableBox[index].classList.contains('show_table')) {
       tableBox[index].classList.add('show_table');
       tableBox[index].focus();
@@ -120,6 +122,7 @@
 
  turnMainButton.addEventListener('click', () => {
   Bgms[0].play();
+  Bgms[0].currentTime = 0;
   tableBox.forEach((BoX) => {
     if(BoX.classList.contains('show_table')){
     BoX.classList.remove('show_table');}
