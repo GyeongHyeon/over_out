@@ -151,6 +151,9 @@
   document.addEventListener("keydown", (event) => {
     if (event.key === 'Tab') {
       Bgms[2].play();
+    }else if(event.key === 'Escape'){
+      Bgms[2].pause();
+      Bgms.pop();
     }
   });
   
