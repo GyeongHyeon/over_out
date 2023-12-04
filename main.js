@@ -68,7 +68,7 @@
   const pElements = document.querySelectorAll('div[id^="main_contents_"] p');
   const h1Elements = document.querySelectorAll('body h1');
   
-  if (windowWidth <= 500) {
+  if (windowWidth < 500) {
     Bgms[2].play();
     pElements.forEach((p) => {
       p.setAttribute('tabindex', '0');
@@ -76,8 +76,7 @@
     h1Elements.forEach((h1) => {
       h1.setAttribute('tabindex', '0');
     });
-  } else {
-    Bgms[2].pause();
+  } else{
     pElements.forEach((p) => {
       p.removeAttribute('tabindex');
     });
@@ -144,11 +143,5 @@
       announcer.textContent = ""; 
     }, 1000);
   }
-
-  document.addEventListener('keydown', (event) => {
-    if(event.key === 'Tab'){
-      Bgms[2].play();
-  };
-})
 
 })();
