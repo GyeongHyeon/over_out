@@ -15,7 +15,7 @@
       listItems[index]?.focus(); // sendFocus가 true면 물리적인 키보드 초점을 보냄
     }
     listItems.forEach((_, i) => {
-      _.classList.toggle("focusing", i === index); // i가 index와 같은 항목에 focusing 추가, 아니면 제거
+      _.classList.toggle('focusing', i === selectedIndex);
       _.tabIndex = i === index ? 0 : -1; // i가 index와 같은 항목에 tabindex를 0, 아닌 항목에 -1 적용
     });
   };
@@ -142,6 +142,17 @@
       clearTimeout(time);
       announcer.textContent = ""; 
     }, 1000);
-  }
+  };
+
+  document.addEventListener("mousemove", () => {
+    Bgms[2].play();
+  });
+  
+  document.addEventListener("keydown", (event) => {
+    if (event.key === 'Tab') {
+      Bgms[2].play();
+    }
+  });
+  
 
 })();
