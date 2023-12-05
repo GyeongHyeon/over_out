@@ -68,12 +68,8 @@
   const pElements = document.querySelectorAll('div[id^="main_contents_"] p');
   const h1Elements = document.querySelectorAll('body h1');
   
-  if (windowWidth < 500) {
+  if (windowWidth <= 500) {
     Bgms[2].play();
-    document.addEventListener('touchstart', () => {
-      Bgms[2].puse();
-      Bgms.pop();
-    });
     pElements.forEach((p) => {
       p.setAttribute('tabindex', '0');
     });
@@ -87,7 +83,14 @@
     h1Elements.forEach((h1) => {
       h1.removeAttribute('tabindex');
     });
-  };  
+  };
+
+  document.addEventListener('touchstart', () => {
+    if(windowWidth <= 500){
+    Bgms[2].puse();
+    Bgms.pop();
+    };
+  });
   //표콘텐츠 관련
   const btnLists = document.querySelectorAll('.btn_list>div');
   const tableBox = document.querySelectorAll('.table_box');
