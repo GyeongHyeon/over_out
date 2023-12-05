@@ -70,6 +70,10 @@
   
   if (windowWidth < 500) {
     Bgms[2].play();
+    document.addEventListener('touchstart', () => {
+      Bgms[2].puse();
+      Bgms.pop();
+    });
     pElements.forEach((p) => {
       p.setAttribute('tabindex', '0');
     });
