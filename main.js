@@ -64,35 +64,13 @@
   });
 
   //모바일환경 일 때
+  window.addEventListener('resize' , () => {
   const windowWidth = window.innerWidth;
   const pElements = document.querySelectorAll('div[id^="main_contents_"] p');
   const h1Elements = document.querySelectorAll('body h1');
   
-  
+
   if (windowWidth <= 500) {
-
-    class Button {
-      constructor(text, onClick) {
-        this.text = text;
-        this.onClick = onClick;
-      }
-    
-      render() {
-        const button = document.createElement("button");
-        button.textContent = this.text;
-        button.addEventListener("click", this.onClick);
-        document.body.appendChild(button);
-      }
-    }
-    
-    const myButton = new Button("배경음끄기", () => {
-      Bgms[2].pause(); Bgms[2].pop();
-    });
-    
-    myButton.render();
-    
-  
-
     Bgms[2].play();
     pElements.forEach((p) => {
       p.setAttribute('tabindex', '0');
@@ -107,8 +85,8 @@
     h1Elements.forEach((h1) => {
       h1.removeAttribute('tabindex');
     });
-  }
-  
+  };
+})  
 
 
   //표콘텐츠 관련
@@ -183,6 +161,7 @@
       Bgms.pop();
     }
   });
-  
+
+
 
 })();
