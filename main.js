@@ -7,13 +7,17 @@
   const announcer = document.querySelector('#announcer');
   const turnMainBtn = document.querySelector('.turn_main');
   const Bgms = [new Audio('bgm/Confirm.mp3'), new Audio('bgm/select.mp3'), new Audio('bgm/background.mp3')];
+  const Head = document.querySelector("header");
 
   class Button {
-    constructor(text, onClick, backgroundColor, padding) {
+    constructor(text, onClick, backgroundColor, padding, position, bottom, left) {
       this.text = text;
       this.onClick = onClick;
       this.backgroundColor = backgroundColor;
       this.padding = padding;
+      this.position = position;
+      this.top = bottom;
+      this.left = left;
       this.button = null;
     }
   
@@ -21,7 +25,10 @@
       this.button = document.createElement("button");
       this.button.textContent = this.text;
       this.button.style.backgroundColor = this.backgroundColor;
-      this.button.style.padding = this.padding; // 이 줄을 추가합니다.
+      this.button.style.padding = this.padding;
+      this.button.style.position = this.position;
+      this.button.style.bottom = this.bottom;
+      this.button.style.left = this.left;
       this.button.addEventListener("click", this.onClick);
       this.button.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
@@ -36,7 +43,7 @@
   const myButton = new Button("배경음OFF", () => {
     Bgms[2].pause();
     Bgms.pop();
-  }, "red", "10px");
+  }, "red", "10px", 'absolute', '0px', '0px');
 
   myButton.render();
 
