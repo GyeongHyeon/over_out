@@ -64,14 +64,14 @@
   });
 
   //모바일환경 일 때
-  window.addEventListener('resize' , () => {
+window.addEventListener('resize' , () => {
+  Bgms[2].play();
   const windowWidth = window.innerWidth;
   const pElements = document.querySelectorAll('div[id^="main_contents_"] p');
   const h1Elements = document.querySelectorAll('body h1');
   
 
   if (windowWidth <= 500) {
-    Bgms[2].play();
     pElements.forEach((p) => {
       p.setAttribute('tabindex', '0');
     });
