@@ -21,7 +21,7 @@
       this.button = null;
     }
   
-    render() {
+    function Btn() {
       this.button = document.createElement("button");
       this.button.textContent = this.text;
       this.button.style.backgroundColor = this.backgroundColor;
@@ -50,7 +50,7 @@
   }, "#f00", "10px", "foots", "bold");
 
   if (window.innerWidth <= 500) {
-    myButton.render();
+    myButton.Btn();
   }
 
   const select = (index, sendFocus = true) => { // 항목을 선택하는 함수
