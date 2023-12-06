@@ -48,7 +48,7 @@
   const myButton = new Button("배경음OFF", () => {
     Bgms[2].pause();
     Bgms.pop();
-  }, "#f00", "10px",  "fixed", "bold");
+  }, "#f00", "10px",  "fixed", "bold", "main_container");
 
   if (window.innerWidth < 500) {
     myButton.render();
