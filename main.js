@@ -8,6 +8,38 @@
   const turnMainBtn = document.querySelector('.turn_main');
   const Bgms = [new Audio('bgm/Confirm.mp3'), new Audio('bgm/select.mp3'), new Audio('bgm/background.mp3')];
 
+  class Button {
+    constructor(text, onClick, backgroundColor, padding) {
+      this.text = text;
+      this.onClick = onClick;
+      this.backgroundColor = backgroundColor;
+      this.padding = padding;
+      this.button = null;
+    }
+  
+    render() {
+      this.button = document.createElement("button");
+      this.button.textContent = this.text;
+      this.button.style.backgroundColor = this.backgroundColor;
+      this.button.style.padding = this.padding; // 이 줄을 추가합니다.
+      this.button.addEventListener("click", this.onClick);
+      this.button.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          this.onClick();
+        }
+      });
+      document.body.appendChild(this.button);
+    }
+  }
+  
+  // 배경음OFF 버튼
+  const myButton = new Button("배경음OFF", () => {
+    Bgms[2].pause();
+    Bgms.pop();
+  }, "red", "10px");
+
+  myButton.render();
+
 
   const select = (index, sendFocus = true) => { // 항목을 선택하는 함수
     selectedIndex = index; // 첫번째 인자인 index를 클로저 전역변수인 selectedIndex에 담음
@@ -160,6 +192,6 @@
     }
   });
 
-
+  
 
 })();
