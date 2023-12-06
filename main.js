@@ -9,15 +9,15 @@
   const Bgms = [new Audio('bgm/Confirm.mp3'), new Audio('bgm/select.mp3'), new Audio('bgm/background.mp3')];
   const Head = document.querySelector("header");
 
+//버튼 생성 클래스
   class Button {
-    constructor(text, onClick, backgroundColor, padding, position, bottom, left) {
+    constructor(text, onClick, backgroundColor, padding, targetTagId, fontWeight) {
       this.text = text;
       this.onClick = onClick;
       this.backgroundColor = backgroundColor;
       this.padding = padding;
-      this.position = position;
-      this.top = bottom;
-      this.left = left;
+      this.targetTagId = targetTagId;
+      this.fontWeight = fontWeight;
       this.button = null;
     }
   
@@ -26,16 +26,20 @@
       this.button.textContent = this.text;
       this.button.style.backgroundColor = this.backgroundColor;
       this.button.style.padding = this.padding;
-      this.button.style.position = this.position;
-      this.button.style.bottom = this.bottom;
-      this.button.style.left = this.left;
+      this.button.style.fontWeight = this.fontWeight;
       this.button.addEventListener("click", this.onClick);
       this.button.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           this.onClick();
         }
       });
-      document.body.appendChild(this.button);
+  
+      const targetTag = document.getElementById(this.targetTagId);
+      if (targetTag) {
+        targetTag.appendChild(this.button);
+      } else {
+        document.body.appendChild(this.button);
+      }
     }
   }
   
@@ -43,10 +47,11 @@
   const myButton = new Button("배경음OFF", () => {
     Bgms[2].pause();
     Bgms.pop();
-  }, "red", "10px", 'absolute', '0px', '0px');
+  }, "#f00", "10px", "foots", "bold");
 
-  myButton.render();
-
+  if (window.innerWidth <= 500) {
+    myButton.render();
+  }
 
   const select = (index, sendFocus = true) => { // 항목을 선택하는 함수
     selectedIndex = index; // 첫번째 인자인 index를 클로저 전역변수인 selectedIndex에 담음
