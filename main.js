@@ -11,11 +11,12 @@
 
 //버튼 생성 클래스
   class Button {
-    constructor(text, onClick, backgroundColor, padding, fontWeight, targetTagId) {
+    constructor(text, onClick, backgroundColor, padding, position, fontWeight, targetTagId) {
       this.text = text;
       this.onClick = onClick;
       this.backgroundColor = backgroundColor;
       this.padding = padding;
+      this.position = position;
       this.targetTagId = targetTagId;
       this.fontWeight = fontWeight;
       this.button = null;
@@ -47,7 +48,7 @@
   const myButton = new Button("배경음OFF", () => {
     Bgms[2].pause();
     Bgms.pop();
-  }, "#f00", "10px", "bold");
+  }, "#f00", "10px",  "fixed", "bold");
 
   if (window.innerWidth < 500) {
     myButton.render();
