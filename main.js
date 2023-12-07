@@ -65,9 +65,9 @@ const pageLinkButton = new Button(" ", () => {
 // 현재 페이지 URL에 따라 버튼 텍스트 변경
 const currentUrl = window.location.href;
 if (currentUrl.includes("sub_page_1.html")) {
-  pageLinkButton.text = "참고 자료 페이지";
-}else{
   pageLinkButton.text = "수업 내용 페이지";
+}else{
+  pageLinkButton.text = "참고 자료 페이지";
 
 }
 
