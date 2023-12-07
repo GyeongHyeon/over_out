@@ -9,40 +9,70 @@
   const Bgms = [new Audio('bgm/Confirm.mp3'), new Audio('bgm/select.mp3'), new Audio('bgm/background.mp3')];
   const Head = document.querySelector("header");
 
-//버튼 생성 클래스
-  class Button {
-    constructor(text, onClick, backgroundColor, padding, position, fontWeight, targetTagId) {
-      this.text = text;
-      this.onClick = onClick;
-      this.backgroundColor = backgroundColor;
-      this.padding = padding;
-      this.position = position;
-      this.targetTagId = targetTagId;
-      this.fontWeight = fontWeight;
-      this.button = null;
-    }
-  
-    render() {
-      this.button = document.createElement("button");
-      this.button.textContent = this.text;
-      this.button.style.backgroundColor = this.backgroundColor;
-      this.button.style.padding = this.padding;
-      this.button.style.fontWeight = this.fontWeight;
-      this.button.addEventListener("click", this.onClick);
-      this.button.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          this.onClick();
-        }
-      });
-  
-      const targetTag = document.getElementById(this.targetTagId);
-      if (targetTag) {
-        targetTag.appendChild(this.button);
-      } else {
-        document.body.appendChild(this.button);
+// 버튼 생성 클래스
+class Button {
+  constructor(text, onClick, backgroundColor, gradientValue, padding, position, top, right, fontWeight, targetTagId) {
+    this.text = text;
+    this.onClick = onClick;
+    this.backgroundColor = backgroundColor;
+    this.gradientValue = gradientValue;
+    this.padding = padding;
+    this.position = position;
+    this.top = top;
+    this.right = right;
+    this.targetTagId = targetTagId;
+    this.fontWeight = fontWeight;
+    this.button = null;
+  }
+
+  render() {
+    this.button = document.createElement("button");
+    this.button.textContent = this.text;
+    this.button.style.backgroundColor = this.backgroundColor;
+    this.button.style.backgroundImage = this.gradientValue;
+    this.button.style.padding = this.padding;
+    this.button.style.position = this.position;
+    this.button.style.top = this.top;
+    this.button.style.right = this.right;
+    this.button.style.fontWeight = this.fontWeight;
+    this.button.addEventListener("click", this.onClick);
+    this.button.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        this.onClick();
       }
+    });
+
+    const targetTag = document.getElementById(this.targetTagId);
+    if (targetTag) {
+      targetTag.appendChild(this.button);
+    } else {
+      document.body.appendChild(this.button);
     }
   }
+}
+
+// 페이지 이동 버튼
+const pageLinkButton = new Button(" ", () => {
+  Bgms[0].play();
+  const currentUrl = window.location.href;
+  if (currentUrl.includes("index.html")) {
+    window.location.href = "sub_page_1.html";
+  } else if (currentUrl.includes("sub_page_1.html")) {
+    window.location.href = "index.html";
+  }
+}, " ", "linear-gradient(to top, #4A564A, #00cc00)", "10px", "absolute", "bold", "0px", "0px", "hyper_portal");
+
+// 현재 페이지 URL에 따라 버튼 텍스트 변경
+const currentUrl = window.location.href;
+if (currentUrl.includes("sub_page_1.html")) {
+  pageLinkButton.text = "참고 자료 페이지";
+}else{
+  pageLinkButton.text = "수업 내용 페이지";
+
+}
+
+pageLinkButton.render();
+
   
   // 배경음OFF 버튼
   const myButton = new Button("배경음OFF", () => {
