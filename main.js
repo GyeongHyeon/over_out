@@ -91,10 +91,10 @@ pageLinkButton.render("#hyper_portal");
   const myButton = new Button("배경음OFF", () => {
     sounds.background.pause();
     delete sounds.background;
-  }, {backgroundColor:"#f00", padding:"10px",  position:"fixed", fontWeight:"bold"});
+  }, {backgroundColor:"#f00", padding:"10px", fontWeight:"bold"});
 
   if (window.innerWidth < 500) {
-    myButton.render();
+    myButton.render("#main_container");
   }
 
   const select = (index, sendFocus = true) => { // 항목을 선택하는 함수
