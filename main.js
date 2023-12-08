@@ -63,29 +63,24 @@ class Button {
 
 // 페이지 이동 버튼
 const pageLinkButton = new Button(" ",() => {
-    sounds.confirm.rewindAndPlay();
-    const currentUrl = window.location.href;
-    if (currentUrl.includes("index.html")) {
-      window.location.href = "sub_page_1.html";
-    } else if (currentUrl.includes("sub_page_1.html")) {
-      window.location.href = "index.html";
-    }
-  },
-  {backgroundColor:"transparent", backgroundImage:"linear-gradient(to top, #4A564A, #00cc00)",
-  padding:"10px", position:"absolute", fontWeight:"bold", right:"0px", top:"0px"}
+  sounds.confirm.rewindAndPlay();
+  const currentUrl = window.location.href;
+  // 현재 페이지 URL에 따라 이동할 페이지 URL을 결정합니다.
+  const targetUrl = currentUrl.includes("index.html") ? "sub_page_1.html" : "index.html";
+
+  // 이동할 페이지 URL을 window.location.href에 설정합니다.
+  window.location.href = targetUrl;
+},
+{backgroundColor:"transparent", backgroundImage:"linear-gradient(to top, #4A564A, #00cc00)",
+padding:"10px", position:"absolute", fontWeight:"bold", right:"0px", top:"0px"}
 );
 
 // 현재 페이지 URL에 따라 버튼 텍스트 변경
 const currentUrl = window.location.href;
-if (currentUrl.includes("sub_page_1.html")) {
-  pageLinkButton.text = "수업 내용 페이지";
-}else{
-  pageLinkButton.text = "참고 자료 페이지";
-
-}
+// 현재 페이지 URL에 따라 버튼 텍스트를 설정합니다.
+pageLinkButton.text = currentUrl.includes("sub_page_1.html") ? "수업 내용 페이지" : "참고 자료 페이지";
 
 pageLinkButton.render("#hyper_portal");
-
   
   // 배경음OFF 버튼
   const myButton = new Button("배경음OFF", () => {
@@ -146,7 +141,7 @@ pageLinkButton.render("#hyper_portal");
           mainContents[index].classList.toggle('show_content');
           turnMainBtn.classList.add('show_btn');
           listContainer.classList.toggle('list_container_hid');
-          announceForSR('페이지 열렸는데?');// 함수 호출
+          announceForSR('아 페이지 열렸다고!');// 함수 호출
           break;
       }
     });
@@ -251,11 +246,13 @@ pageLinkButton.render("#hyper_portal");
   document.addEventListener("keydown", (event) => {
     if(event.key === 'ArrowLeft'){
       turnMainBtn.click();
+    } else if(event.key === "Tab"){
+      sounds.background.play();
     } else if(event.key === 'Escape'){
       sounds.background.pause();
       delete sounds.background;
     }
   });
 
- 
+ announceForSR("목록에서 위아래 방향키 로 선택하고 맘에 들면 엔터나 눌러 보던지");
 })();
