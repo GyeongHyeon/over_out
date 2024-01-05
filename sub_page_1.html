@@ -2,14 +2,16 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>접근성</title>
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>접근성기능_참고자료</title>
     <link rel="stylesheet" href="main.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
 </head>
 <body>
 
     <header id="hyper_portal">
-        <button class="turn_main">처음으로</button>
+        <button class="turn_main" aria-label="첫화면으로 돌아가기"><i class="fa fa-arrow-left"></i></button>
     </header>
     <div class="list_container">
         <div class="list_group">
@@ -22,9 +24,161 @@
     
     <main id="main_container">
 
-        <div id="main_contents_1" class="content_div">
+        <div id="main_contents_i" class="content_div">
+            <div tabindex="0" class="table_box_2">
+                <h3>Talk Back 사용 설명서</h3>
+
+                <table>
+                    <tr>
+                      <td>중요도</td>
+                      <td>동작</td>
+                      <td>제스처</td>
+                      <td>비고</td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>탐색 포커스 다음으로 이동</td>
+                      <td>한 손가락 오른쪽으로 스와이프</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>탐색 포커스 이전으로 이동</td>
+                      <td>한 손가락 왼쪽으로 스와이프</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>다음 읽기 컨트롤로 변경</td>
+                      <td>한 손가락 아래에서 위로 스와이프</td>
+                      <td rowspan="2">원하는 읽기 컨트롤로 맞춘 후, 한 손가락으로 위 또는 아래로 스와이프시 읽기 컨트롤 기준에 맞게 컨텐츠 탐색 및 읽기 가능</td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>이전 읽기 컨트롤로 변경</td>
+                      <td>한 손가락 위에서 아래로 스와이프</td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>원하는 항목 포커싱</td>
+                      <td>한 손가락으로 원하는 콘텐츠 탭(항목: 아이콘, 메뉴, 콘텐츠 등)</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>화면 아래로 스크롤 및 다음 페이지 이동</td>
+                      <td>한 손가락 오른쪽 왼쪽 순으로 스와이프</td>
+                      <td>두 손가락 아래로 스와이프: 아래 스크롤<br>두 손가락 왼쪽 스와이프 다음 페이지 이동</td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>화면 위로 스크롤 및 이전 페이지 이동</td>
+                      <td>한 손가락 왼쪽 오른쪽 순으로 스와이프</td>
+                      <td>두 손가락 아래로 스와이프: 위 스크롤<br>두 손가락 오른쪽 스와이프: 이전 페이지 이동</td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>홈 화면 바로가기</td>
+                      <td>한 손가락 위쪽 왼쪽 순으로 스와이프</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>TalkBack 빠른 설정 열기</td>
+                      <td>한 손가락 위쪽 오른쪽 또는 아래쪽 오른쪽 순으로 스와이프</td>
+                      <td>세 손가락 화면 탭으로도 가능</td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>뒤로가기</td>
+                      <td>한 손가락 아래쪽 왼쪽 순으로 스와이프</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>최근 사용 앱 목록</td>
+                      <td>한 손가락 왼쪽 위쪽 순으로 스와이프</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>알림창 내리기</td>
+                      <td>한 손가락 오른쪽 아래쪽 순으로 스와이프</td>
+                      <td>알림창 완전히 내리고 싶을 경우<br />두 손가락 위에서 아래 스와이프</td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>음성 일시 중지/시작</td>
+                      <td>두 손가락 탭</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>미디어 재생/중지</td>
+                      <td>두 손가락 화면 이중 탭</td>
+                      <td>마지막에 재생했던 미디어 컨텐츠가 재생 됨<br />(유튜브/음악 스트리밍 앱)</td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>다음 항목부터 읽기</td>
+                      <td>두 손가락 화면 세번 탭</td>
+                      <td>포커싱된 현재 위치에서 사용시 바로 아래 항목부터 읽음</td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>TalkBack 음성사용 중지/시작</td>
+                      <td>두 손가락 화면 세번 탭 한 상태에서 음성 피드백 재생 전까지 손가락 때지 않기</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>텍스트 복사하기</td>
+                      <td>세 손가락 화면 두번 탭</td>
+                      <td>포커싱된 텍스트 컨텐츠를 복사한ㅁ다.</td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>잘라내기</td>
+                      <td>세 손가락 화면 두 번 탭 한 상태에서 음성피드백 재생 전까지 손가락 때지 않기</td>
+                      <td>편집 중인 문서(텍스트)에서 사용 가능</td>
+                    </tr>
+                    <tr>
+                      <td>절대적</td>
+                      <td>붙여넣기</td>
+                      <td>세 손가락 화면 세번 탭</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>상대적</td>
+                      <td>모두 선택</td>
+                      <td>세 손가락 세번 탭 한 상태에서 음성 피드백 재생 전까지 손가락 때지 않기</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>거의 안 씀</td>
+                      <td>동작 연습</td>
+                      <td>네 손가락 화면 탭</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>거의 안 씀</td>
+                      <td>가이드 열기</td>
+                      <td>네 손가락 화면 두 번 탭</td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  
+
+            </div>
         
         </div>
+
+        <div id="main_contents_2" class="content_div">
+            <div tabindex="0" class="table_box_2">
+                <h3>Talk Back 사용 설명서</h3>
+            </div>
+        </div>
+
 </main>
 
 

@@ -83,11 +83,21 @@ pageLinkButton.text = currentUrl.includes("sub_page_1.html") ? "수업 내용 �
 pageLinkButton.render("#hyper_portal");
   
   // 배경음OFF 버튼
-  const myButton = new Button("배경음OFF", () => {
+  const myButton = new Button("", () => {
     sounds.background.pause();
     delete sounds.background;
   }, {backgroundColor:"#f00", padding:"10px", fontWeight:"bold"});
 
+  // 아이콘 요소 생성
+const icon = document.createElement('i');
+icon.className = "fas fa-stop";
+icon.setAttribute('aria-label', '배경음 끄기');
+
+// 아이콘 추가
+myButton.button.prepend(icon);
+
+
+  //해당 조건일 때 버튼 표시
   if (window.innerWidth < 500) {
     myButton.render("#main_container");
   }
@@ -149,26 +159,11 @@ pageLinkButton.render("#hyper_portal");
 
   //모바일환경 일 때
   const windowWidth = window.innerWidth;
-  const pElements = document.querySelectorAll('div[id^="main_contents_"] p');
-  const h1Elements = document.querySelectorAll('body h1');
   
 
-  if (windowWidth <= 500) {
+  if (windowWidth <= 950) {
     sounds.background.play();
-    pElements.forEach((p) => {
-      p.setAttribute('tabindex', '0');
-    });
-    h1Elements.forEach((h1) => {
-      h1.setAttribute('tabindex', '0');
-    });
-  } else {
-    pElements.forEach((p) => {
-      p.removeAttribute('tabindex');
-    });
-    h1Elements.forEach((h1) => {
-      h1.removeAttribute('tabindex');
-    });
-  };
+  }
 
 
   //표콘텐츠 관련
@@ -254,5 +249,5 @@ pageLinkButton.render("#hyper_portal");
     }
   });
 
- announceForSR("목록에서 위아래 방향키 로 선택하고 맘에 들면 엔터나 눌러 보던지");
+announceForSR("목록에서 위아래 방향키 로 선택하고 맘에 들면 엔터나 눌러 보던지");
 })();
