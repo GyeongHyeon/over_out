@@ -73,7 +73,7 @@ header{background: #4A564A; position:absolute; top:0px; left:0px; width:100%; he
         table{width:100%; margin-top:1.5rem; border-collapse: collapse;
             tr{width:100%;
                 td{border: 1px solid #fff; padding: 1rem 1rem 1rem;}
-                td:first-child{width:20%;}
+                td:first-child{width:25%;}
             }
         }
 }
@@ -81,7 +81,7 @@ header{background: #4A564A; position:absolute; top:0px; left:0px; width:100%; he
 .table_box_2{
     table{width:100%; margin-top:1.5rem; border-collapse: collapse;
         tr{width:100%;
-            td:first-child{width: 10%;}
+            td:first-child{width: 13%;}
             td{border: 1px solid #fff; width:30%; padding:0 0 10px; }
         }
     }
