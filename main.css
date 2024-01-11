@@ -82,7 +82,7 @@ header{background: #4A564A; position:absolute; top:0px; left:0px; width:100%; he
     table{width:100%; margin-top:1.5rem; border-collapse: collapse;
         tr{width:100%;
             td:first-child{width: 13%;}
-            td{border: 1px solid #fff; width:30%; padding:0 0 10px; }
+            td{border: 1px solid #fff; width:30%; padding:0 10px 0 0; }
         }
     }
     h3{margin-top:1.5rem;}
