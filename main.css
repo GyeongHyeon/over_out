@@ -94,7 +94,7 @@ header{background: #4A564A; position:absolute; top:0px; left:0px; width:100%; he
         .table_3{
             table{width:100%; margin-top:1.5rem; border-collapse: collapse;
                 tr{width:100%;
-                    td{border: 1px solid #fff; padding:10px 0 10px 0; }
+                    td{border: 1px solid #fff; padding:10px 0 10px 0; width:20%;}
                     td:nth-child(5){width:30%;}
                 }
             }
