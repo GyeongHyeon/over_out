@@ -248,6 +248,6 @@ myButton.button.prepend(icon);
       delete sounds.background;
     }
   });
-
+  
 announceForSR("목록에서 위아래 방향키 로 선택하고 맘에 들면 엔터나 눌러 보던지");
 })();
