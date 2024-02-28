@@ -3,53 +3,98 @@
 <head>
   <style>
     .container {
+      color:#fff;
+      text-align: center;
       margin: 30px auto;
-      background-color: #0000ff;
+      background-color: #000;
       width: 200px;
       height: 300px;
       position: relative;
     }
+
     .triangle {
       width: 0;
       height: 0;
       border-left: 50px solid transparent;
       border-right: 50px solid transparent;
-      border-bottom: 60px solid #FFFFFF;
+      border-top: 60px solid #FFFFFF;
       position: absolute;
       top: 40px;
       left: 50%;
       transform: translateX(-50%) rotate(180deg);
     }
-    .cup {
-      width: 100px;
+
+  .cup{
+    width: 120px;
       height: 150px;
-      background-color: transparent;
+      background-color: #000; /* Use #007bff for blue color */
       position: absolute;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      border: 4px solid #FFFFFF;
+      border: 4px solid #FFF;
       border-radius: 0 0 50% 50%;
-      z-index: 1;
+    .cup1{
+      width:100px;
+      height:50px;
     }
-    .saucer {
-      width: 150px;
+
+    .cup2 {
+      width: 50px;
       height: 10px;
-      background-color: #FFFFFF;
+      background-color: #fff; /* Use #007bff for blue color */
       position: absolute;
-      bottom: 10px;
+      bottom: 6px;
       left: 50%;
       transform: translateX(-50%);
-      border-radius: 0 0 100% 100%;
-      z-index: 0;
+      border: 4px solid #FFFFFF;
+      border-radius: 0 0 90% 90%;
+      z-index: 1;
+    }
+  }
+
+  .tray{
+      width: 140px;
+      height:3px;
+      background:#fff;
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 4px solid #FFFFFF;
+      border-radius: 0 0 50% 50%;
+    }
+
+
+    .desk{
+    width: 70px;
+      height: 110px;
+      background-color: #000; /* Use #007bff for blue color */
+      position: absolute;
+      bottom: 20px;
+      left: 55%;
+      border: 4px solid #FFF;
+    }
+    .right_arrow{
+      position:absolute;
+      left: 57%;
+      font-size:5.5rem;
+      top:40px;
+    }
+    img{
+      width: 80px; height:220px;
+      position: absolute; left:20px; bottom:20px;
     }
   </style>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
   <div class="container">
-    <div class="triangle"></div>
-    <div class="cup"></div>
-
+    <h1>ORDER</h1>
+    <img src="p.png" />
+    <div class="right_arrow"><i class="fa fa-arrow-right"></i></div>
+    <div class="desk"></div>
+    </div>
   </div>
 </body>
 </html>
